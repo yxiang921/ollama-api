@@ -1,2 +1,0 @@
-Flask
-langchain_community
