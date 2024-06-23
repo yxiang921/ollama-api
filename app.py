@@ -18,7 +18,7 @@ def aiPost():
         "answer": response
     }
 
-    return response
+    return f"Query: {query}, Response: {response}"
 
 
 if __name__ == '__main__':
