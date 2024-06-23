@@ -6,11 +6,17 @@ app = Flask(__name__)
 
 cache_llm = Ollama(model="phi3:mini")
 
+@app.route('/testing', methods=['GET'])
+def testing():
+    print("Hello, World!")
+    return "Hello, World!"
+
 @app.route('/ai', methods=['POST'])
 def aiPost():
     json_content = request.json
     query = json_content.get("query")
     app.logger.info(f"Received query: {query}")
+    print(f"Received query: {query}")
 
     try:
         response = cache_llm.invoke(query)
